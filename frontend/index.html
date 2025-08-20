@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Image Enhancer</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1 class="hero-title">Transform Your Images with AI</h1>
+      <p class="hero-subtitle">Enhance, upscale, and improve photos in seconds.</p>
+      <button class="btn btn--primary" id="startBtn">Start Enhancing</button>
+    </div>
+  </section>
+
+  <section id="upload" class="hidden">
+    <div class="container">
+      <div id="uploadZone" class="dropzone">
+        <input id="fileInput" type="file" accept="image/*" hidden />
+        <p>Drag & drop an image here or <button id="pickBtn" class="link">choose a file</button></p>
+        <div id="uploadPreview" class="preview hidden">
+          <img id="previewImage" alt="preview"/>
+          <div class="meta"><span id="fileName"></span> • <span id="fileSize"></span></div>
+          <button id="enhanceBtn" class="btn btn--primary">Enhance</button>
+          <button id="backBtn" class="btn">Back</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="processing" class="hidden">
+    <div class="container">
+      <h2 id="processingTitle">Processing...</h2>
+      <p id="processingSubtitle">Analyzing image...</p>
+      <div class="progress"><div id="progressFill" class="progress-fill"></div></div>
+      <ul class="steps">
+        <li id="step1">Analyze</li>
+        <li id="step2">Enhance</li>
+        <li id="step3">Finalize</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="results" class="hidden">
+    <div class="container results">
+      <div class="pane">
+        <h3>Original</h3>
+        <img id="originalImage" alt="original"/>
+      </div>
+      <div class="pane">
+        <h3>Refined</h3>
+        <img id="refinedImage" alt="refined"/>
+      </div>
+    </div>
+    <div class="container actions">
+      <a id="downloadBtn" class="btn btn--primary" download="enhanced.png">Download</a>
+      <button id="enhanceAnotherBtn" class="btn">Enhance Another</button>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
